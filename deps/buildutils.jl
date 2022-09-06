@@ -38,7 +38,7 @@ end
 
 # return libpython name, libpython pointer
 function find_libpython(python::AbstractString; _dlopen = Libdl.dlopen)
-    dlopen_flags = Libdl.RTLD_LAZY|Libdl.RTLD_DEEPBIND|Libdl.RTLD_GLOBAL
+    dlopen_flags = Libdl.RTLD_LAZY|Libdl.RTLD_DEEPBIND
 
     libpaths = exec_find_libpython(python, `--list-all`)
     for lib in libpaths
